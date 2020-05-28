@@ -4,12 +4,12 @@ function validateEmail(email) {
   const re = /^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
   return re.test(email);
 }
+//code from https://stackoverflow.com/questions/46155/how-to-validate-an-email-address-in-javascript
 
 
-
-
+////////////////////////////////
 function sendEmail() {
-
+///////////////rest is all personal code
 var address=document.getElementById('textbox3').value;
 var res = address.split(",");
 console.log(res);
@@ -23,9 +23,10 @@ if(te)
 	var subject = document.getElementById('textbox7').value;
 
   	var body = document.getElementById('body').value ;
+
   	if(subject!=""&&body!="")
   		{
-  			Email.send({
+  			Email.send({//code from https://www.smtpjs.com/ and edited
 				    SecureToken : "c25a360b-9329-49ed-8d85-c102035a4d0d",
 				    To : address,
 				    From : "anonmessaging720@gmail.com",
@@ -34,6 +35,7 @@ if(te)
 				}).then(
 				  message => alert(message)
 				);
+				/////////////////////////////////////////////////
   		}
   		else
   		{
